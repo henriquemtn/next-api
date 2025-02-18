@@ -1,36 +1,75 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Next.js API Learning Project
+
+## Overview
+This project is designed to help developers learn how to create and manage API routes in Next.js. It provides well-structured examples demonstrating different API functionalities, including GET and POST requests.
+
+## Features
+- Basic API route setup
+- Handling GET and POST requests
+- JSON response formatting
+- Error handling for requests
+- Examples with `NextResponse`
 
 ## Getting Started
+### Prerequisites
+Ensure you have Node.js and pnpm or npm installed on your system.
 
-First, run the development server:
+### Installation
+1. Clone the repository:
+   ```sh
+   git clone https://github.com/henriquemtn/next-api.git
+   ```
+2. Navigate to the project directory:
+   ```sh
+   cd next-api
+   ```
+3. Install dependencies:
+   ```sh
+   pnpm install
+   ```
+4. Start the development server:
+   ```sh
+   pnpm dev
+   ```
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+## API Endpoints
+### GET `/api`
+Returns a simple greeting message.
+#### Example Response
+```json
+{
+  "message": "Hello, World!"
+}
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+### POST `/api/user`
+Accepts a JSON object with a `name` field and returns a personalized greeting.
+#### Example Request Body
+```json
+{
+  "name": "Henrique"
+}
+```
+#### Example Response
+```json
+{
+  "message": "Hello, Henrique!"
+}
+```
+#### Error Response (if name is missing)
+```json
+{
+  "error": "The 'name' field is required."
+}
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Documentation
+For more details on Next.js API routes, check out the official documentation:
+[Next.js API Routes Documentation](https://nextjs.org/docs/pages/building-your-application/routing/api-routes)
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+## License
+This project is open-source and available under the MIT License.
 
-## Learn More
+---
+Happy coding! 🚀
 
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
